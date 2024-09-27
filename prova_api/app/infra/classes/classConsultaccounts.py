@@ -24,7 +24,7 @@ class ConsultAccount:
                 .filter(Family.id == id_familia)\
                 .all()
 
-            resultado = []
+            resultado = [] 
             for tipo_conta, id_conta, Valor in select:
                 resultado.append({'Tipo da Conta':tipo_conta, 'ID da Conta': id_conta, 'Valor': '{}R$'.format(Valor)})
             if not resultado == []:
@@ -35,7 +35,7 @@ class ConsultAccount:
                 with self.connection as Connection:
                     select =  Connection.session.query(ContaUsuario).filter(Family.id == id).all()
                 if not select == None:
-                    return select
+                    return select 
                 
         def verification_id_family_and_id_account(self, id_family, id_account):
                 with self.connection as Connection:
